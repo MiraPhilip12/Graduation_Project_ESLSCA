@@ -1,0 +1,415 @@
+{
+  "video_path": "uploads\\Test_Actor_20260218_103014.mp4",
+  "target_action": "Paddle_forehand",
+  "analysis_time": "2026-02-18T10:30:14.977000",
+  "eye_tracking": {
+    "statistics": {
+      "avg_eye_contact_score": 0.0,
+      "avg_ear": 0.0,
+      "blink_rate_per_minute": 0.0,
+      "total_blinks": 0,
+      "eye_contact_percentage": 0.0,
+      "gaze_variance": 0.0,
+      "left_right_balance": 0.0
+    },
+    "data": [
+      {
+        "left_ear": 0,
+        "right_ear": 0,
+        "avg_ear": 0,
+        "left_gaze_ratio": 0,
+        "right_gaze_ratio": 0,
+        "avg_gaze_ratio": 0,
+        "blink_detected": false,
+        "eye_contact_score": 0,
+        "frame": 0,
+        "timestamp": 0.0
+      },
+      {
+        "left_ear": 0,
+        "right_ear": 0,
+        "avg_ear": 0,
+        "left_gaze_ratio": 0,
+        "right_gaze_ratio": 0,
+        "avg_gaze_ratio": 0,
+        "blink_detected": false,
+        "eye_contact_score": 0,
+        "frame": 5,
+        "timestamp": 0.16666666666666666
+      },
+      {
+        "left_ear": 0,
+        "right_ear": 0,
+        "avg_ear": 0,
+        "left_gaze_ratio": 0,
+        "right_gaze_ratio": 0,
+        "avg_gaze_ratio": 0,
+        "blink_detected": false,
+        "eye_contact_score": 0,
+        "frame": 10,
+        "timestamp": 0.3333333333333333
+      },
+      {
+        "left_ear": 0,
+        "right_ear": 0,
+        "avg_ear": 0,
+        "left_gaze_ratio": 0,
+        "right_gaze_ratio": 0,
+        "avg_gaze_ratio": 0,
+        "blink_detected": false,
+        "eye_contact_score": 0,
+        "frame": 15,
+        "timestamp": 0.5
+      },
+      {
+        "left_ear": 0,
+        "right_ear": 0,
+        "avg_ear": 0,
+        "left_gaze_ratio": 0,
+        "right_gaze_ratio": 0,
+        "avg_gaze_ratio": 0,
+        "blink_detected": false,
+        "eye_contact_score": 0,
+        "frame": 20,
+        "timestamp": 0.6666666666666666
+      },
+      {
+        "left_ear": 0,
+        "right_ear": 0,
+        "avg_ear": 0,
+        "left_gaze_ratio": 0,
+        "right_gaze_ratio": 0,
+        "avg_gaze_ratio": 0,
+        "blink_detected": false,
+        "eye_contact_score": 0,
+        "frame": 25,
+        "timestamp": 0.8333333333333334
+      },
+      {
+        "left_ear": 0,
+        "right_ear": 0,
+        "avg_ear": 0,
+        "left_gaze_ratio": 0,
+        "right_gaze_ratio": 0,
+        "avg_gaze_ratio": 0,
+        "blink_detected": false,
+        "eye_contact_score": 0,
+        "frame": 30,
+        "timestamp": 1.0
+      },
+      {
+        "left_ear": 0,
+        "right_ear": 0,
+        "avg_ear": 0,
+        "left_gaze_ratio": 0,
+        "right_gaze_ratio": 0,
+        "avg_gaze_ratio": 0,
+        "blink_detected": false,
+        "eye_contact_score": 0,
+        "frame": 35,
+        "timestamp": 1.1666666666666667
+      },
+      {
+        "left_ear": 0,
+        "right_ear": 0,
+        "avg_ear": 0,
+        "left_gaze_ratio": 0,
+        "right_gaze_ratio": 0,
+        "avg_gaze_ratio": 0,
+        "blink_detected": false,
+        "eye_contact_score": 0,
+        "frame": 40,
+        "timestamp": 1.3333333333333333
+      },
+      {
+        "left_ear": 0,
+        "right_ear": 0,
+        "avg_ear": 0,
+        "left_gaze_ratio": 0,
+        "right_gaze_ratio": 0,
+        "avg_gaze_ratio": 0,
+        "blink_detected": false,
+        "eye_contact_score": 0,
+        "frame": 45,
+        "timestamp": 1.5
+      },
+      {
+        "left_ear": 0,
+        "right_ear": 0,
+        "avg_ear": 0,
+        "left_gaze_ratio": 0,
+        "right_gaze_ratio": 0,
+        "avg_gaze_ratio": 0,
+        "blink_detected": false,
+        "eye_contact_score": 0,
+        "frame": 50,
+        "timestamp": 1.6666666666666667
+      },
+      {
+        "left_ear": 0,
+        "right_ear": 0,
+        "avg_ear": 0,
+        "left_gaze_ratio": 0,
+        "right_gaze_ratio": 0,
+        "avg_gaze_ratio": 0,
+        "blink_detected": false,
+        "eye_contact_score": 0,
+        "frame": 55,
+        "timestamp": 1.8333333333333333
+      }
+    ]
+  },
+  "emotion_analysis": {
+    "statistics": {
+      "dominant_emotion_overall": "sad",
+      "emotion_variance": {
+        "angry": 0.07343825714153165,
+        "disgust": 8.443184518250098e-15,
+        "fear": 0.20126883065964388,
+        "happy": 5.929469306506677e-11,
+        "sad": 0.10425822810096226,
+        "surprise": 0.00010858868475633577,
+        "neutral": 0.023119182614021867
+      },
+      "average_emotion_scores": {
+        "angry": 0.13124947340911816,
+        "disgust": 3.752603522478516e-08,
+        "fear": 0.4124694074760797,
+        "happy": 4.075360661858774e-06,
+        "sad": 0.3663917958085758,
+        "surprise": 0.004551610171156664,
+        "neutral": 0.0853335845425018
+      },
+      "emotional_range": 0.9930775173808302,
+      "emotion_transitions": 4,
+      "face_presence": 0.0,
+      "emotional_expression_score": 0.2690042567662261
+    },
+    "data": [
+      {
+        "angry": 9.475044096768234e-05,
+        "disgust": 4.8491977217805624e-12,
+        "fear": 0.9930775173810104,
+        "happy": 2.3930644477661704e-06,
+        "sad": 0.0053160547460848395,
+        "surprise": 0.0014912699666968026,
+        "neutral": 1.799622954531351e-05,
+        "dominant_emotion": "fear",
+        "face_confidence": 0,
+        "frame": 0,
+        "timestamp": 0.0
+      },
+      {
+        "angry": 0.03958789904857885,
+        "disgust": 3.2729698293321624e-12,
+        "fear": 0.31877859606998016,
+        "happy": 9.144330313110026e-10,
+        "sad": 0.6415292451942867,
+        "surprise": 2.9302073161778632e-05,
+        "neutral": 7.49029988422209e-05,
+        "dominant_emotion": "sad",
+        "face_confidence": 0,
+        "frame": 10,
+        "timestamp": 0.3333333333333333
+      },
+      {
+        "angry": 0.6828064133409508,
+        "disgust": 2.2508918027728627e-07,
+        "fear": 0.04298812779713439,
+        "happy": 1.5581868946840349e-09,
+        "sad": 0.27392538034471153,
+        "surprise": 1.0183422925711788e-06,
+        "neutral": 0.0002788352305958558,
+        "dominant_emotion": "angry",
+        "face_confidence": 0,
+        "frame": 20,
+        "timestamp": 0.6666666666666666
+      },
+      {
+        "angry": 0.013604626059532166,
+        "disgust": 5.828416221875798e-11,
+        "fear": 0.960418701171875,
+        "happy": 1.795497837520088e-06,
+        "sad": 0.00017629643843974918,
+        "surprise": 0.025788012892007828,
+        "neutral": 1.059096848621266e-05,
+        "dominant_emotion": "fear",
+        "face_confidence": 0,
+        "frame": 30,
+        "timestamp": 1.0
+      },
+      {
+        "angry": 0.05071951589351703,
+        "disgust": 4.445459312313261e-13,
+        "fear": 0.045668421457001986,
+        "happy": 1.9667796934393226e-05,
+        "sad": 0.5285987223865125,
+        "surprise": 1.11938907011057e-08,
+        "neutral": 0.3749936074026099,
+        "dominant_emotion": "sad",
+        "face_confidence": 0,
+        "frame": 40,
+        "timestamp": 1.3333333333333333
+      },
+      {
+        "angry": 0.0006836356711623873,
+        "disgust": 1.80195723590702e-13,
+        "fear": 0.11388508097947608,
+        "happy": 5.933321315471667e-07,
+        "sad": 0.7488050757414193,
+        "surprise": 4.6558890297835086e-08,
+        "neutral": 0.13662557442493134,
+        "dominant_emotion": "sad",
+        "face_confidence": 0,
+        "frame": 50,
+        "timestamp": 1.6666666666666667
+      }
+    ]
+  },
+  "pose_analysis": {
+    "statistics": {
+      "average_posture": 0.9570173658430576,
+      "posture_variance": 7.79580284938176e-05,
+      "average_arm_openness": 0.24469297808849,
+      "average_gesture_intensity": 0.34130254743640404,
+      "gestile_range": 0.3577861048306493,
+      "average_movement_speed": 0.03471251926865032,
+      "movement_variance": 0.0005377498770207603,
+      "average_tension": 0.6153236840805046,
+      "pose_expression_score": 0.338170762236889
+    },
+    "data": [
+      {
+        "posture_straightness": 0.9405825287103653,
+        "arm_openness": 0.1251001261312871,
+        "body_tension": 0.7440767708718539,
+        "gesture_intensity": 0.3127703763041867,
+        "movement_speed": 0.0,
+        "frame": 0,
+        "timestamp": 0.0
+      },
+      {
+        "posture_straightness": 0.9419678449630737,
+        "arm_openness": 0.04645396934157795,
+        "body_tension": 0.8204153159778818,
+        "gesture_intensity": 0.3430223152613421,
+        "movement_speed": 0.01933716110312759,
+        "frame": 5,
+        "timestamp": 0.16666666666666666
+      },
+      {
+        "posture_straightness": 0.9488445073366165,
+        "arm_openness": 1.0,
+        "body_tension": 0.8271599863279516,
+        "gesture_intensity": 0.3901293666749069,
+        "movement_speed": 0.04343164888821095,
+        "frame": 10,
+        "timestamp": 0.3333333333333333
+      },
+      {
+        "posture_straightness": 0.956471398472786,
+        "arm_openness": 0.2700910526939441,
+        "body_tension": 0.76740840827961,
+        "gesture_intensity": 0.3693985979232459,
+        "movement_speed": 0.025412561836812373,
+        "frame": 15,
+        "timestamp": 0.5
+      },
+      {
+        "posture_straightness": 0.9644389897584915,
+        "arm_openness": 0.2690370141154995,
+        "body_tension": 0.7649642037378035,
+        "gesture_intensity": 0.3894431558163731,
+        "movement_speed": 0.012799554939836392,
+        "frame": 20,
+        "timestamp": 0.6666666666666666
+      },
+      {
+        "posture_straightness": 0.9649097770452499,
+        "arm_openness": 0.3351894904822424,
+        "body_tension": 0.823930509194533,
+        "gesture_intensity": 0.46899425151516994,
+        "movement_speed": 0.02610967248602701,
+        "frame": 25,
+        "timestamp": 0.8333333333333334
+      },
+      {
+        "posture_straightness": 0.9568742513656616,
+        "arm_openness": 0.003548484850293694,
+        "body_tension": 0.9003130749104515,
+        "gesture_intensity": 0.5598463491320113,
+        "movement_speed": 0.055830820325576895,
+        "frame": 30,
+        "timestamp": 1.0
+      },
+      {
+        "posture_straightness": 0.9644852727651596,
+        "arm_openness": 0.23231284491778365,
+        "body_tension": 0.4759021208591032,
+        "gesture_intensity": 0.2603544500195993,
+        "movement_speed": 0.07264751275983833,
+        "frame": 35,
+        "timestamp": 1.1666666666666667
+      },
+      {
+        "posture_straightness": 0.9645314663648605,
+        "arm_openness": 0.19279144061448664,
+        "body_tension": 0.36188249873412215,
+        "gesture_intensity": 0.20297398383217674,
+        "movement_speed": 0.07506464869321998,
+        "frame": 40,
+        "timestamp": 1.3333333333333333
+      },
+      {
+        "posture_straightness": 0.9636757075786591,
+        "arm_openness": 0.20638382924755266,
+        "body_tension": 0.442498183767951,
+        "gesture_intensity": 0.32447937978338137,
+        "movement_speed": 0.03442900753148407,
+        "frame": 45,
+        "timestamp": 1.5
+      },
+      {
+        "posture_straightness": 0.9613726586103439,
+        "arm_openness": 0.16097550737906005,
+        "body_tension": 0.09713828595362217,
+        "gesture_intensity": 0.2721580986730937,
+        "movement_speed": 0.019305948141010845,
+        "frame": 50,
+        "timestamp": 1.6666666666666667
+      },
+      {
+        "posture_straightness": 0.9560539871454239,
+        "arm_openness": 0.0944319772881521,
+        "body_tension": 0.3581948503511725,
+        "gesture_intensity": 0.20206024430136194,
+        "movement_speed": 0.03218169451865935,
+        "frame": 55,
+        "timestamp": 1.8333333333333333
+      }
+    ]
+  },
+  "gesture_analysis": {
+    "error": "index 21 is out of bounds for axis 0 with size 21"
+  },
+  "voice_analysis": {
+    "statistics": {},
+    "data": []
+  },
+  "overall_scores": {
+    "eye_contact": 0.0,
+    "emotional_expression": 0.2690042567662261,
+    "physical_expression": 0.338170762236889,
+    "gesture_accuracy": 0,
+    "voice_quality": 0,
+    "final_score": 0.1060640841976345
+  },
+  "performance_level": "Bad Performance",
+  "actor_name": "Test Actor",
+  "actor_age": "25",
+  "age_group": "teenager",
+  "selected_actions": [
+    "Paddle_forehand"
+  ],
+  "video_filename": "Test_Actor_20260218_103014.mp4"
+}

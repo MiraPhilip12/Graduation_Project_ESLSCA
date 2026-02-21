@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Performance Report - {{ results.actor_name }}</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<style>
+@media print {
+.no-print {
+display: none;
+}
+.print-full {
+width: 100%;
+}
+}
+.gradient-bg {
+background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+.metric-card {
+transition: all 0.3s ease;
+}
+.metric-card:hover {
+transform: translateY(-2px);
+box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+}
+</style>
+</head>
+<body class="bg-gray-100">
+<!-- Header -->
+<div class="gradient-bg text-white shadow-lg no-print">
+<div class="container mx-auto px-6 py-4">
+<div class="flex items-center justify-between">
+<div class="text-2xl font-bold">🎭 Performance Report</div>
+<div class="space-x-4">
+<button onclick="window.print()" class="bg-white text-purple-600 px-4 py-2 rounded-lg hover:bg-gray-100">
+Print Report
+</button>
+<a href="/" class="bg-white text-purple-600 px-4 py-2 rounded-lg hover:bg-gray-100">
+New Analysis
+</a>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Main Content -->
+<div class="container mx-auto px-6 py-8">
+<!-- Report Header -->
+<div class="bg-white rounded-lg shadow-xl p-8 mb-8">
+<div class="flex justify-between items-start">
+<div>
+<h1 class="text-3xl font-bold text-gray-800 mb-2">Acting Performance Assessment</h1>
+<p class="text-gray-600">Generated on {{ results.analysis_time[:10] }} at {{ results.analysis_time[11:19] }}</p>
+</div>
+<div class="text-right">
+<p class="text-2xl font-bold 
+{% if results.performance_level == 'Good Performance' %}text-green-600
+{% elif results.performance_level == 'Moderate Performance' %}text-yellow-600
+{% else %}text-red-600{% endif %}">
+{{ results.performance_level }}
+</p>
+<p class="text-gray-600">Final Score: {{ "%.1f"|format(results.overall_scores.final_score * 100) }}%</p>
+</div>
+</div>
+</div>
+
+<!-- Actor Information -->
+<div class="bg-white rounded-lg shadow-xl p-8 mb-8">
+<h2 class="text-xl font-bold text-gray-800 mb-4">Actor Information</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div>
+<p class="text-gray-600">Name</p>
+<p class="text-lg font-semibold">{{ results.actor_name }}</p>
+</div>
+<div>
+<p class="text-gray-600">Age</p>
+<p class="text-lg font-semibold">{{ results.actor_age }}</p>
+</div>
+<div>
+<p class="text-gray-600">Target Action</p>
+<p class="text-lg font-semibold">{{ results.target_action.replace('_', ' ') }}</p>
+</div>
+</div>
+</div>
+
+<!-- Overall Scores -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 mb-8">
+{% for metric, score in results.overall_scores.items() %}
+{% if metric != 'final_score' %}
+<div class="bg-white rounded-lg shadow p-6 metric-card">
+<p class="text-gray-600 text-sm mb-2">{{ metric.replace('_', ' ')|title }}</p>
+<p class="text-2xl font-bold text-purple-600">{{ "%.1f"|format(score * 100) }}%</p>
+<div class="w-full bg-gray-200 rounded-full h-2 mt-2">
+<div class="bg-purple-600 rounded-full h-2" style="width: {{ score * 100 }}%"></div>
+</div>
+</div>
+{% endif %}
+{% endfor %}
+</div>
+
+<!-- Detailed Analysis -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+<!-- Eye Tracking -->
+<div class="bg-white rounded-lg shadow-xl p-6">
+<h3 class="text-lg font-bold text-gray-800 mb-4 flex items-center">
+<span class="w-2 h-8 bg-blue-500 rounded-full mr-3"></span>
+Eye Tracking Analysis
+</h3>
+{% if results.eye_tracking.statistics %}
+<div class="space-y-3">
+<div class="flex justify-between">
+<span class="text-gray-600">Eye Contact</span>
+<span class="font-semibold">{{ "%.1f"|format(results.eye_tracking.statistics.eye_contact_percentage) }}%</span>
+</div>
+<div class="flex justify-between">
+<span class="text-gray-600">Blink Rate</span>
+<span class="font-semibold">{{ "%.1f"|format(results.eye_tracking.statistics.blink_rate_per_minute) }}/min</span>
+</div>
+<div class="flex justify-between">
+<span class="text-gray-600">Gaze Variance</span>
+<span class="font-semibold">{{ "%.3f"|format(results.eye_tracking.statistics.gaze_variance) }}</span>
+</div>
+</div>
+{% else %}
+<p class="text-gray-500">No eye tracking data available</p>
+{% endif %}
+</div>
+
+<!-- Emotion Analysis -->
+<div class="bg-white rounded-lg shadow-xl p-6">
+<h3 class="text-lg font-bold text-gray-800 mb-4 flex items-center">
+<span class="w-2 h-8 bg-green-500 rounded-full mr-3"></span>
+Emotion Analysis
+</h3>
+{% if results.emotion_analysis.statistics %}
+<div class="space-y-3">
+<div class="flex justify-between">
+<span class="text-gray-600">Dominant Emotion</span>
+<span class="font-semibold">{{ results.emotion_analysis.statistics.dominant_emotion_overall }}</span>
+</div>
+<div class="flex justify-between">
+<span class="text-gray-600">Emotional Range</span>
+<span class="font-semibold">{{ "%.2f"|format(results.emotion_analysis.statistics.emotional_range) }}</span>
+</div>
+<div class="flex justify-between">
+<span class="text-gray-600">Expression Score</span>
+<span class="font-semibold">{{ "%.1f"|format(results.emotion_analysis.statistics.emotional_expression_score * 100) }}%</span>
+</div>
+</div>
+{% else %}
+<p class="text-gray-500">No emotion analysis data available</p>
+{% endif %}
+</div>
+
+<!-- Pose Analysis -->
+<div class="bg-white rounded-lg shadow-xl p-6">
+<h3 class="text-lg font-bold text-gray-800 mb-4 flex items-center">
+<span class="w-2 h-8 bg-yellow-500 rounded-full mr-3"></span>
+Pose & Posture Analysis
+</h3>
+{% if results.pose_analysis.statistics %}
+<div class="space-y-3">
+<div class="flex justify-between">
+<span class="text-gray-600">Posture Score</span>
+<span class="font-semibold">{{ "%.1f"|format(results.pose_analysis.statistics.average_posture * 100) }}%</span>
+</div>
+<div class="flex justify-between">
+<span class="text-gray-600">Arm Openness</span>
+<span class="font-semibold">{{ "%.1f"|format(results.pose_analysis.statistics.average_arm_openness * 100) }}%</span>
+</div>
+<div class="flex justify-between">
+<span class="text-gray-600">Movement Speed</span>
+<span class="font-semibold">{{ "%.3f"|format(results.pose_analysis.statistics.average_movement_speed) }}</span>
+</div>
+</div>
+{% else %}
+<p class="text-gray-500">No pose analysis data available</p>
+{% endif %}
+</div>
+
+<!-- Gesture Analysis -->
+<div class="bg-white rounded-lg shadow-xl p-6">
+<h3 class="text-lg font-bold text-gray-800 mb-4 flex items-center">
+<span class="w-2 h-8 bg-red-500 rounded-full mr-3"></span>
+Gesture Analysis
+</h3>
+{% if results.gesture_analysis.statistics %}
+<div class="space-y-3">
+<div class="flex justify-between">
+<span class="text-gray-600">Gesture Accuracy</span>
+<span class="font-semibold">{{ "%.1f"|format(results.gesture_analysis.statistics.gesture_accuracy * 100) }}%</span>
+</div>
+<div class="flex justify-between">
+<span class="text-gray-600">Unique Gestures</span>
+<span class="font-semibold">{{ results.gesture_analysis.statistics.unique_gestures }}</span>
+</div>
+<div class="flex justify-between">
+<span class="text-gray-600">Most Common</span>
+<span class="font-semibold">{{ results.gesture_analysis.statistics.most_common_gesture }}</span>
+</div>
+</div>
+{% else %}
+<p class="text-gray-500">No gesture analysis data available</p>
+{% endif %}
+</div>
+</div>
+
+<!-- Voice Analysis -->
+<div class="bg-white rounded-lg shadow-xl p-6 mb-8">
+<h3 class="text-lg font-bold text-gray-800 mb-4 flex items-center">
+<span class="w-2 h-8 bg-purple-500 rounded-full mr-3"></span>
+Voice Analysis
+</h3>
+{% if results.voice_analysis.statistics %}
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<div>
+<p class="text-gray-600">Words Spoken</p>
+<p class="text-xl font-semibold">{{ results.voice_analysis.statistics.words_spoken }}</p>
+</div>
+<div>
+<p class="text-gray-600">Speech Percentage</p>
+<p class="text-xl font-semibold">{{ "%.1f"|format(results.voice_analysis.statistics.speech_percentage) }}%</p>
+</div>
+<div>
+<p class="text-gray-600">Vocal Energy</p>
+<p class="text-xl font-semibold">{{ "%.1f"|format(results.voice_analysis.statistics.vocal_energy * 100) }}%</p>
+</div>
+<div>
+<p class="text-gray-600">Pitch Range</p>
+<p class="text-xl font-semibold">{{ "%.1f"|format(results.voice_analysis.statistics.pitch_range) }} Hz</p>
+</div>
+<div>
+<p class="text-gray-600">Pitch Variety</p>
+<p class="text-xl font-semibold">{{ "%.1f"|format(results.voice_analysis.statistics.pitch_variety * 100) }}%</p>
+</div>
+</div>
+
+<!-- Transcript -->
+{% if results.voice_analysis.statistics.transcript %}
+<div class="mt-4 p-4 bg-gray-50 rounded-lg">
+<p class="text-gray-700 font-semibold mb-2">Transcript:</p>
+<p class="text-gray-600 italic">"{{ results.voice_analysis.statistics.transcript }}"</p>
+</div>
+{% endif %}
+{% else %}
+<p class="text-gray-500">No voice analysis data available</p>
+{% endif %}
+</div>
+
+<!-- Recommendations -->
+<div class="bg-white rounded-lg shadow-xl p-6 mb-8">
+<h3 class="text-lg font-bold text-gray-800 mb-4">Recommendations</h3>
+<ul class="space-y-2 text-gray-700">
+{% if results.overall_scores.eye_contact < 0.6 %}
+<li class="flex items-start">
+<span class="text-red-500 mr-2">•</span>
+Improve eye contact with the camera/scene partner
+</li>
+{% endif %}
+
+{% if results.overall_scores.emotional_expression < 0.6 %}
+<li class="flex items-start">
+<span class="text-yellow-500 mr-2">•</span>
+Work on emotional range and expression variety
+</li>
+{% endif %}
+
+{% if results.overall_scores.voice_quality < 0.6 %}
+<li class="flex items-start">
+<span class="text-blue-500 mr-2">•</span>
+Focus on vocal projection and pitch variation
+</li>
+{% endif %}
+
+{% if results.overall_scores.physical_expression < 0.6 %}
+<li class="flex items-start">
+<span class="text-purple-500 mr-2">•</span>
+Use more expressive body language and gestures
+</li>
+{% endif %}
+</ul>
+</div>
+
+<!-- Footer -->
+<div class="text-center text-gray-500 text-sm no-print">
+<p>Report generated by Acting Performance Assessment System</p>
+</div>
+</div>
+</body>
+</html>
